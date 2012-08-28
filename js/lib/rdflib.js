@@ -7051,7 +7051,7 @@ $rdf.Fetcher = function(store, timeout, async) {
         }
         */
 
-        onerrorFactory = function(xhr) { return function(event) {
+        var onerrorFactory = function(xhr) { return function(event) {
             if ($rdf.Fetcher.crossSiteProxyTemplate && document && document.location && !this.proxyUsed) { // In mashup situation
                 var hostpart = $rdf.Util.uri.hostpart;
                 var here = '' + document.location;
@@ -7106,7 +7106,7 @@ $rdf.Fetcher = function(store, timeout, async) {
         }; }
         
         // Set up callbacks
-        onreadystatechangeFactory = function(xhr) { return function() {
+        var onreadystatechangeFactory = function(xhr) { return function() {
             var handleResponse = function() {
                 if (xhr.handleResponseDone) return;
                 xhr.handleResponseDone = true;
