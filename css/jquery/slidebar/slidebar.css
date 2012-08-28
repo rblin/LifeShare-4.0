@@ -1,0 +1,105 @@
+/** 
+ * Slideshow style rules.
+ */
+#slideshow {
+	margin:0 auto;
+	width:1206px;
+	height:75px;
+	position:relative;
+	background-repeat : repeat-x;
+}
+
+#slidesContainer {
+	float : left;
+	width:1095px;
+	height:75px;
+	overflow:hidden; /* affiche une scrollbar au cas ou */
+	position:relative;
+
+}
+#slideshow #slidesContainer .slide {
+	margin:0 auto;
+	width:1095px; /* reduit de 20 pixels la div #slidesContainer pour permettre d'afficher la barre de scroll */
+	height:75px;
+}
+
+/** 
+ * Slideshow controls style rules.
+ */
+.control {
+	float : left;
+	display:block;
+	width:53px;
+	height:75px;
+	position:relative;
+	cursor: pointer;
+}
+.barre_noir_fond{
+	width : 100%;
+	min-width : 1206px;
+	background-image:url(img/fond-barrenoir.png);
+}
+#navDiapo{
+	display:block;
+	width:20px;
+	height:20px;
+	position:absolute;
+	right:25px;
+	bottom:10px;
+	cursor:pointer;
+}
+#leftControl {
+	background:transparent url(img/bouton_gauche.png) no-repeat 0 0;
+}
+#rightControl {
+	background:transparent url(img/bouton_droit.png) no-repeat 0 0;
+}
+
+/**
+ * Cadre photo
+*/
+.slide{
+	float : left;
+	margin : 0px 0px;
+}
+.actu_barre_noir{
+	margin-left : 5px;
+}
+
+.cadre_miniature_photo{
+	float : left;
+	margin-top : 7px;
+	margin-left : 3px;
+	padding-top : 3px;
+	width : 62px;
+	height : 57px;
+	text-align : center;
+	background:transparent url(img/cadre_miniature.png) no-repeat 0 0;
+}
+
+.contenu_actu_barre_noir{
+	color : #acacac;
+	font-family : verdana, sans-serif;
+	font-size : 10px;
+	margin-top : 5px;
+	margin-left : 5px;
+	float : left;
+	width : 200px;
+	height : 57px;
+}
+
+.contenu_actu_barre_noir p{
+	padding : 0px;
+	margin-top : 3px;
+}
+
+.important{
+	color : #117e44;
+	font-weight : bold;
+}
+
+.barre_noir_debut{
+	padding : 0px;
+	margin : 0px 0px;
+	color : #ffffff;
+}

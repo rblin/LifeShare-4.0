@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LifeShare</title>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="css/design/wall/wall.css" />
+	<link rel="stylesheet" type="text/css" href="css/design/design/design.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery/slidebar/slidebar.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery/jquery-ui/jquery-ui-1.8.21.custom.css" />
+
+	<script src="js/lib/jquery-1.7.2.min.js"></script>
+	<script src="js/lib/jquery-ui-1.8.21.custom.min.js"></script>
+	<script src="js/lib/rdflib.js"></script>
+
+	<script src="js/features/slidebar.js"></script>
+	<script src="js/features/gestion-actualites.js"></script>
+	<script src="js/features/gestion-commentaires.js"></script>
+	<script src="js/wall-loader.js"></script>
+	
+	<script>
+		PATH = "";
+		
+		$(function() {
+			var availableTags = ["","Romain Blin","Stephen Gonthier"];
+			$( "#example" ).autocomplete({
+				source: availableTags
+			});
+		});
+		
+		$(function(){
+			$('#jaime').dialog({
+				autoOpen: false,
+				width: 500,
+				modal: true,
+				buttons: {
+					"Ok": function() { 
+						$(this).dialog("close"); 
+					}
+				}
+			});
+		});
+
+		function showmenu(menu) {
+			if (menu.style.display == 'none'){
+				menu.style.display = 'block';
+			}else{
+				menu.style.display = 'none';
+			}
+		}
+		
+		$(document).ready(function(){
+		    wall_loader("http://bblfish.net/people/henry/card#me");
+		});
+	</script>
+</head>
+<body>
+
+	<header class="cadre_general_header">
+		<div class="cadre_general_barre">
+			<div class="barre_general_logo">
+				<img src="images/design/logo.png" alt="logo" />
+			</div>
+			<div class="barre_general_fond">
+				<a id="event_amis" href="/Deconnexion"></a>	
+				<a id="event_evenements_3_off" href="/modules/profil/demandesAmis.jsp#tabs-2"></a>
+				<form class="barre_general_recherche" action="/RechercheAmis" method="post">
+					<div>
+						<input id="example" type="text" name="ami" onclick="recherche_clear();" size="40" />
+					</div>
+				</form>
+				<div id="liens_barre_general" class="liens_barre_general">
+					<a href="">Accueil</a> | 
+					<a href="">Profil</a> | 
+					<a href="">Paramètres</a>
+				</div>
+			</div>
+			<div class="barre_general_ombre"></div>
+		</div>
+	</header>
+	<div class="barre_noir_fond">
+		<div id="slideshow" class="slider">
+			<div class="control" id="leftControl"></div>
+			<div id="slidesContainer">
+				<!-- <div class="slide">
+					<div class="actu_barre_noir">
+						<div class="cadre_miniature_photo">
+						</div>
+						<div class="contenu_actu_barre_noir">
+							<p>
+								<strong><a href="/explorateurMurAmis?idAmis=13">Marie Louison</a></strong>
+								a commenté votre 
+								<a class="lien_barre_actu" href="/AfficheActu?id=5661">publication</a>
+								sur son mur...
+							</p>
+							<p class="barre_noir_debut">
+								Merci pour cette tite vir...
+							</p>
+						</div>
+					</div>
+				</div> -->
+			</div>
+			<div class="control" id="rightControl"></div>
+		</div>
+	</div>
+	
+	<div class="cadre_principal">
+		<div class="cote_menu"></div>
+		<nav class="menu">
+			<div class="photo_profil" id="profile_photo">
+				<!-- <img src="/banque-images/medium/75.jpg" alt="profil" />-->
+			</div>
+			
+			<ul class="choix_menu" id="liens_menu">
+				<li><a class="align_image" href="/MurProfil"><img src="images/menu/mur.png" alt="logo_mur" /> <span>Mon mur</span></a></li>
+				<li><a class="align_image" href="/modules/profil/renseignements.jsp"><img src="images/menu/infos2.png" alt="logo_mur" /> <span>Mes infos</span></a></li>
+				<li><a class="align_image" href="/modules/profil/demandesAmis.jsp"><img src="images/menu/amis.png" alt="logo_mur" /> <span>Mes amis</span></a></li>
+				<li><a class="align_image" href="/AccesCercle"><img src="images/menu/cercle.png" alt="logo_mur" /> <span>Gestion cercles</span></a></li>
+			</ul>
+			
+			<hr />
+		
+			<div class="chat">
+				<div class="titre_chat" id="friends">
+
+				</div>
+				<div id="friends_list" class="contact_en_ligne">
+					
+					<!-- <div class="contact_chat">
+						<a class="align_photo_chat"
+							href="/explorateurMurAmis?idAmis=128"><img
+							src="/banque-images/mini/92.jpg"
+							alt="Anne-K Chaussette" /></a> <a class="align_photo_chat"
+							href="/explorateurMurAmis?idAmis=128">
+							Anne-K Chaussette
+						</a><br />
+					</div>-->
+				</div>
+			</div>
+		</nav>
+		<section class="contenu">
+			<div class="header_actus">
+				<div class="big_mur_actu_recentes">
+					<img src="images/design/actualites.png" alt="logo" />
+					Actualités récentes
+				</div>
+				<hr />
+				<div class="bas_header_actus">
+					
+					<form action="" method="post">
+						<div class="barre_nouvelle_actu">
+							Publier :
+							<textarea id="new_actu" class="new_actu" name="new_actu" onkeypress="if (event.keyCode == 13) retourLigne();"></textarea>
+							<input type="hidden" name="type" value="1" />
+						</div>
+						<div class="bouton_envoi_actu">
+							<input class="publier_submit" type="submit" value="" />
+						</div>
+					</form>
+				</div>
+			</div>
+				
+			<!-- <article id="actualite_5667" class="actus">
+				<div class="texte_actu">
+					<a class="actus_photos" href="/explorateurMurAmis?idAmis=21"><img src="/banque-images/mini/91.jpg" alt="profil" /></a>
+					<div class="contenu_actu">
+						<strong><a href="/explorateurMurAmis?idAmis=21">Béatrice Fournier</a></strong>
+						: en a marre d'avoir la poisse, si la roue pouvait tourner, ça m'arrangerait ^^
+						<div class="date_creation_actu">
+							1 Juillet 2012, 12:32
+						</div>
+					</div>
+				</div>
+				<div class="commentaire_actus" id="commentaire_actus_5667">
+					<div class="aime_ca" id="contenu_aime_ca_5667">
+						<a onclick="requeteAimeActus(5667, 1);" style="cursor: pointer;">J'aime</a>
+					</div>
+					<div class="commentaires_amis" id="com_5680">
+						<img class="commentaires_photos" src="/banque-images/mini/89.jpg" alt="profil" />
+						<strong><a href="/explorateurMurAmis?idAmis=13">Marie Louison</a></strong>
+						Qu'est ce qui se passe Bibou? J'espère que ce n'est rien de trop grave.
+						<p class="date_creation_actu">
+							1 Juillet 2012, 22:20
+							<a onclick="requeteAimeCommentaire(1, 5680, 5667);" style="cursor: pointer;">J'aime</a> 
+						</p>
+					</div>
+					<form  action="" method="post" onsubmit="return(requeteAjoutCommentaireActus(1, 5667));">
+						<p class="ajout_commentaires_amis">
+							<input type="text" id="new_commentaire_5667" name="texte_commentaire" />
+						</p>
+					</form>
+				</div>
+			</article>-->
+		</section>
+
+	</div>
+</body>
+</html>

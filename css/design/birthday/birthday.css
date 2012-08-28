@@ -1,0 +1,115 @@
+/*CSS Anniversaire*/
+
+.img_profil_ami{
+	border : 1px solid black;
+	border-collapse : separate;
+	width: auto;
+	height: auto;
+	min-width : 200px;
+	min-height : 200px;
+	max-width : 350px;
+	max-height : 350px;
+}
+#img_profil_ami{
+float : right;
+}
+div#nom_ami{
+	float : left;
+	text-align : left;
+	margin-left : 8px;
+	margin-right : 0px;
+	margin-top : 0px;
+}
+.img_ami{
+	margin : 3px;
+		width: auto;
+	height: auto;
+	border : 1px solid black;
+	border-collapse : separate;
+}
+a.email_anniv:link {	
+	font-size : 14px;
+	font-family : sans-serif;
+	color : #dedede;
+	text-decoration: none}
+a.email_anniv:visited {
+	font-size : 14px;
+	font-family : sans-serif;
+	color : #ffffff;
+	text-decoration: none}
+a.email_anniv:active {
+	font-size : 14px;
+	font-family : sans-serif;
+	color : #ffffff;
+	text-decoration: none}
+a.email_anniv:hover {
+	font-size : 14px;
+	font-family : sans-serif;
+	color : #ffffff;
+	text-decoration: none;}
+.img_ami{
+	margin : 3px;
+	width: 50px;
+	height: 50px;
+	border : 1px solid black;
+	border-collapse : separate;
+}
+div#entete_anniv{
+	margin : 0px;
+	width : 880px;
+	min-height : 60px;
+	font-size : 25px;
+	font-family : sans-serif;
+	color : #032c07;
+}
+.cadre_info{
+	float:left;
+	margin : 0 auto;
+	width : 880px;
+	height : 18px;
+	display : block;
+	font-size : 14px;
+	font-family : sans-serif;
+	color : #498056;
+	background-image : url(img/cadre_infos.png);
+}
+.cadre_contenu_info{
+	float:left;
+	margin : 4px;
+	width : 880px;
+	font-size : 14px;
+	font-family : sans-serif;
+	color : #4e4e4e;
+	border : 0px solid black;
+	background-color : #efefef;
+	}
+.espace_img_ami{
+	float:left;
+	margin-left:15px;
+	margin-right:32px;
+	margin-top: 3px;
+}
+.espace_nom_ami{
+	float:left;
+margin-right:320px;
+margin-top: 12px;
+}
+.espace_email_anniv{
+float:right;
+margin-right:32px;
+margin-top: 20px;
+border : 1px solid black;
+background-color : #498056;
+}
+.ligne_anniv{
+float:left;
+margin-right:32px;
+width:850px;
+font-size : 14px;
+font-family : Helvetica, sans-serif;
+}
+a.nom_ami_ligne{
+	min-height : 300px;
+	font-size : 14px;
+	font-family : Helvetica, sans-serif;
+}

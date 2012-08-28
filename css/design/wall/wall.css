@@ -1,0 +1,441 @@
+.profil_nom_compte{
+	font-family : Trebuchet MS, sans-serif;
+	font-size : 12px;
+	float : left;
+	width : 600px;
+	color : #5c5c5c;
+}
+
+.profil_explication{
+	float: left;
+	width : 300px;
+	font-size : 11px;
+	font-weight : normal;
+	color : #777777;
+}
+.profil_explication img{
+	width : 13px;
+}
+.infos_cercle{
+	color : #005064;
+	text-decoration : underline;
+	font-weight : bold;
+	font-size : 15px;
+	font-family : sans-serif;
+}
+.big_mur_actu_recentes{
+	margin-top : 0px;
+	font-size : 15px;
+	font-weight : bold;
+	color : black;
+	display : inline-block;
+}
+.big_mur_actu_recentes img{
+	font-size : 15px;
+	font-weight : bold;
+	color : black;
+	display : inline-block;
+	vertical-align : middle;
+
+}
+.cadre_module_anniversaire{
+	width : 270px;
+	min-height : 350px;
+	border : 1px solid #eeeeee;
+	float : right;
+	font-size : 12px;
+	border : 1px solid red;
+}
+
+.cadre_module_anniversaire img{
+	width : 20px;
+	display : inline-block;
+	vertical-align :middle;
+}
+
+.cadre_module_anniversaire h1{
+	color : #184e30;
+	width : 100%;
+	margin : 0px 0px;
+	background-color : #eeeeee;
+	font-size : 15px;
+	font-weight : bold;
+	font-family : Helvetica, sans-serif;
+	vertical-align :middle;
+}
+.affichage_anniv{
+	text-align: left;
+	margin-left : 15px;
+	font-size : 12px;
+	font-family : Helvetica, sans-serif;
+	vertical-align :middle;
+}
+.nom_anniv{
+	margin-left : 5px;
+	font-size : 14px;
+	font-family : Helvetica, sans-serif;
+}
+.cadre_module_anniversaire hr{
+	margin : 0px 0px;
+}
+
+.profil_nom_compte h1{
+	margin : 2px 0px;
+	color : #000000;
+}
+
+.profil_slide_photos{
+	margin-top : 8px;
+	width : 580px;
+	height : 70px;
+}
+
+.profil_vert_lifeshare{
+	color : #117e44;
+}
+
+.profil_separation{
+	margin : 0 auto;
+	margin-top : 3px;
+	margin-bottom : 3px;
+	height : 1px;
+	width : 880px;
+	text-align : center;
+	background-image : url(img/profil-separation.png);
+}
+
+.profil_photo{
+	float : left;
+	width : 110px;
+	height : 70px;
+	margin-left : 3px;
+	border : 1px solid ;
+	border-color : #555555;
+}
+.cadre_principal_actus{
+	padding-left : 15px;
+	max-width : 600px;
+	float : left;
+}
+.header_actus{
+	width : 580px;
+	float : left;
+}
+
+.haut_header_actus{
+	color : #004522;
+	border : 1px solid red;
+	font-family : Trebuchet MS, Sans-serif;
+	font-weight : normal;
+	font-size : 25px;
+	text-align : center;
+}
+
+.gauche_header_actus{
+	text-align : left;
+	float : left;
+	width : 400px;
+	height : 20px;
+}
+
+.droite_header_actus{
+	color : #333333;
+	text-align : right;
+	font-family : Trebuchet MS, Sans-serif;
+	font-size : 15px;
+	font-weight : bold;
+	text-decoration : none;
+	float : right;
+	width : 400px;
+	height : 20px;
+}
+
+#actus_recent li{
+	display : inline-block;
+	min-width : 70px;
+	text-align : left;
+	vertical-align : middle;
+}
+#actus_recent  a{
+	font-family : helvetica, sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	color : #098354;
+	text-decoration : none;
+	vertical-align : middle;
+}
+.align_image_actus img{
+	width : 20px;
+	vertical-align: middle;
+	display: inline-block; 
+}
+.align_image_actus span {
+	vertical-align: middle;
+	display: inline-block; 
+}
+.photo_aime_ca img{
+	width : 50px;
+	height : 50px;
+}
+
+#actus_recent a:hover{
+	color : #005832;
+	text-decoration : underline;
+}
+#haut_actus_recent  a{
+	font-family : Sans-serif;
+	font-size : 11px;
+	font-weight : bold;
+	color : #005832;
+	text-decoration : none;
+}
+#haut_actus_recent a:hover{
+	color : #005832;
+	text-decoration : underline;
+}
+
+#actus_recent img{
+	border : 0px;
+	max-width : 32px;
+	max-height : 32px;
+	vertical-align : middle;
+}
+.barre_nouvelle_actu input{
+	color : #444444;
+	width : 580px;
+	height : 25px;
+	border : 1px solid;
+	border-color : #b4bbcd;
+}
+
+.barre_nouvelle_actu{
+	font-size : 11px;
+}
+
+#logo_barre_actus img{
+	border : 0px;
+}
+
+.boutons_actu{
+	font-family : sans-serif;
+	font-size : 11px;
+	font-weight : bold;
+	color : #444444;
+	padding : 0px
+}
+
+.publier_submit{
+	margin-top : 5px;
+    border:none;
+    background: transparent url('img/bouton-publier.png') no-repeat top left;
+    width: 86px;
+    height: 21px;
+	float : right;
+}
+
+.bloc_actus_ecrit{
+	width : 580px;
+	float : left;
+}
+
+.actus{
+	width : 580px;
+	margin-top : 5px;
+	margin-left : 5px;
+	float : left;
+}
+
+.actus_photos{
+	float : left;
+	width : 50px;
+	height : 50px;
+	border : 1px solid;
+	border-color : #aaaaaa;
+}
+
+.actus_photos img{
+	width : 50px;
+	height : 50px;
+}
+
+.commentaires_photos{
+	float : left;
+	width : 30px;
+	height : 30px;
+}
+
+.contenu_actu{
+	float : left;
+	width : 525px;
+	margin-left : 3px;
+	color : #3f3f3f;
+	font-family : Trebuchet MS, Sans-serif;
+	font-size : 12px;
+	font-weight : regular;
+}
+
+.nom_profil{
+	font-family : Trebuchet MS, Sans-serif;
+	font-size : 13px;
+	font-weight : bold;
+	color : #006140;
+}
+.texte_actu{
+	float : left;
+}
+.spacer{
+	clear : both;
+}
+.aime_ca{
+	float : left;
+	width : 402px;
+	padding : 2px;
+	font-family : Trebuchet MS, Sans-serif;
+	font-size : 11px;
+	font-weight : regular;
+	color : #006140;
+	background-color : #edeff4;
+}
+
+.commentaire_actus{
+	width : 402px;
+	margin : 0 auto;
+}
+
+.commentaires_amis{
+	float : left;
+	margin-top : 2px;
+	padding : 2px;
+	font-family : Trebuchet MS, Sans-serif;
+	font-size : 11px;
+	color : #444444;
+	width : 402px;
+	min-height : 30px;
+	background-color : #edeff4;
+}
+
+.ajout_commentaires_amis{
+	float : left;
+	font-family : Trebuchet MS, Sans-serif;
+	font-size : 11px;
+	font-weight : regular;
+	color : #444444;
+	margin : 2px auto;
+	width : 402px;
+	background-color : #edeff4;
+	padding-left : 2px;
+	padding-right : 2px;
+}
+
+.ajout_commentaires_amis input{
+	width : 394px;
+	border : 1px solid ;
+	border-color : #bdc7d8;
+	margin : 3px 3px;
+}
+.proprio_commentaire{
+	font-family : Trebuchet MS, Sans-serif;
+	font-size : 11px;
+	font-weight : bold;
+	color : #006140;
+}
+
+.sup_actu{
+	
+	color : #555555;
+	text-decoration : none;
+}
+
+.haut_actus{
+	float : right;
+	width : 15px;
+}
+
+.date_creation_actu{
+	width : 575px;
+	font-size : 11px;
+	margin-top : 2px;
+	margin-bottom : 2px;
+	font-family : Helvetica, Sans-serif;
+	font-weight : normal;
+	color : #999999;
+}
+
+.bloc_actu_notification{
+	width : 530px;
+	float : left;
+	font-size : 11px;
+	font-family : Helvetica, Sans-serif;
+	font-weight : normal;
+	color : #444444;
+	margin-left : 50px;
+}
+
+.bloc_actu_notification img{
+	width : 25px;
+}
+
+.aime_commentaire{
+	color : #555555;
+}
+
+.type_actu_photo{
+	font-family : helvetica, sans-serif;
+	font-weight : normal;
+	font-size : 12px;
+	color : #555555;
+}
+
+.type_actu_photo input{
+	border : 1px solid #aaaaaa;
+	width : 400px;
+}
+
+.type_actu_lien{
+	font-family : helvetica, sans-serif;
+	font-weight : normal;
+	font-size : 12px;
+	color : #555555;
+}
+
+.type_actu_lien input{
+	border : 1px solid #aaaaaa;
+	width : 500px;
+	height : 23px;
+}
+.gestion_cercles{
+	float : right;
+	width : 270px;
+	height : 280px;
+}
+.acces_cercle{
+	margin-right : 5px;
+	float : left;
+	width : 122px;
+	height : 122px;
+	background-image: url(img/cercle-amis.png);
+	background-repeat : repeat-x;
+	text-align : center;
+}
+.acces_cercle a{
+	position:relative;
+	top : 45px;
+	height : 12px;
+	color : #005064;
+	font-family : Sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	
+}
+
+.new_actu{
+	border : 1px solid;
+	border-color : #b4bbcd;
+	width : 580px;
+	height : 20px;
+	resize: none;
+	padding : 2px;
+	font-family : helvetica, sans-serif;
+	font-size : 13px;
+}
+
