@@ -50,7 +50,18 @@
 		}
 		
 		$(document).ready(function(){
-		    wall_loader("http://bblfish.net/people/henry/card#me");
+			$rdf.Fetcher.crossSiteProxyTemplate="http://data.fm/proxy?uri={uri}";
+			// load variable
+			var query = window.location.search;
+			query = decodeURIComponent(query);
+			var variables = query.split("?")[1].split("&");
+			var GET = [];
+			for(var i=0 ; i<variables.length ; i++){
+				var pair = variables[i].split("=");
+				GET[pair[0]] = pair[1];
+			}
+			// http://bblfish.net/people/henry/card#me
+		    wall_loader(GET["uri"]);
 		});
 	</script>
 </head>

@@ -9,7 +9,7 @@ var CONTACT = $rdf.Namespace("http://www.w3.org/2000/10/swap/pim/contact#");
 
 function wall_loader(uri){
 	$rdf.Fetcher.crossSiteProxyTemplate="http://data.fm/proxy?uri={uri}";
-	load_foaf_profile("http://bblfish.net/people/henry/card#me");
+	load_foaf_profile(uri);
 };
 
 /**
@@ -43,7 +43,7 @@ function load_foaf_profile(profile_uri){
 							'<a class="align_photo_chat" href="/explorateurMurAmis?idAmis=128">'+
 								'<img src="' + store.any(profile, FOAF('depiction')).value + '" alt="'+ store.any(profile, FOAF('name')).value +'" />' +
 							'</a>' +
-							'<a class="align_photo_chat" href="'+ friend_uri +'"> '+
+							'<a class="align_photo_chat" href="wall.html?uri=' + encodeURIComponent(friend_uri) +'"> '+
 								store.any(profile, FOAF('name')) +
 							'</a>'+
 							'<br />'+
@@ -55,7 +55,7 @@ function load_foaf_profile(profile_uri){
 								'<a class="align_photo_chat" href="/explorateurMurAmis?idAmis=128">'+
 									'<img src="banque-images/mini/mini-avatar-homme-defaut.png" alt="'+ store.any(profile, FOAF('name')).value +'" />' +
 								'</a>' +
-								'<a class="align_photo_chat" href="'+ friend_uri +'"> '+
+								'<a class="align_photo_chat" href="wall.html?uri=' + encodeURIComponent(friend_uri) +'"> '+
 									store.any(profile, FOAF('name')) +
 								'</a>'+
 								'<br />'+
@@ -73,10 +73,12 @@ function load_foaf_profile(profile_uri){
 	var docURI = profile_uri.slice(0, profile_uri.indexOf('#'));
 	var person = $rdf.sym(profile_uri);
     var fetch = $rdf.fetcher(store, undefined, true);
-    var graph = $rdf.sym(docURI);
-	fetch.nowOrWhenFetched(docURI, undefined, function(){
+    var graph = $rdf.sym($rdf.Fetcher.crossSiteProxy(docURI));
+	fetch.nowOrWhenFetched($rdf.Fetcher.crossSiteProxy(docURI), undefined, function(){
 		name = store.any(person, FOAF('name'));
-		avatar = store.any(person, FOAF('depiction'));
+		avatar = store.any(person, FOAF('img'));
+		if(!avatar) avatar = store.any(person, FOAF('depiction'));
+		
 		friends = store.each(person, FOAF('knows'), undefined, graph);
 		$('#foaf_name').append(name.value);
 		$('#profile_photo').append('<img src="' + avatar.uri + '" alt="'+ name +'" />');
