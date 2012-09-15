@@ -12,6 +12,7 @@
 	<script src="js/lib/jquery-1.7.2.min.js"></script>
 	<script src="js/lib/jquery-ui-1.8.21.custom.min.js"></script>
 	<script src="js/lib/rdflib.js"></script>
+	<!-- <script src="../rdflib.js/dist/rdflib.js"></script> -->
 
 	<script src="js/features/slidebar.js"></script>
 	<script src="js/features/gestion-actualites.js"></script>
@@ -56,7 +57,7 @@
 			query = decodeURIComponent(query);
 			var variables = query.split("?")[1].split("&");
 			var GET = [];
-			for(var i=0 ; i<variables.length ; i++){
+			for(var i=0 ; i < variables.length ; i++){
 				var pair = variables[i].split("=");
 				GET[pair[0]] = pair[1];
 			}
@@ -114,70 +115,86 @@
 			<div class="control" id="rightControl"></div>
 		</div>
 	</div>
-	
-	<div class="cadre_principal">
-		<div class="cote_menu"></div>
-		<nav class="menu">
-			<div class="photo_profil" id="profile_photo">
-				<!-- <img src="/banque-images/medium/75.jpg" alt="profil" />-->
-			</div>
-			
-			<ul class="choix_menu" id="liens_menu">
-				<li><a class="align_image" href="/MurProfil"><img src="images/menu/mur.png" alt="logo_mur" /> <span>Mon mur</span></a></li>
-				<li><a class="align_image" href="/modules/profil/renseignements.jsp"><img src="images/menu/infos2.png" alt="logo_mur" /> <span>Mes infos</span></a></li>
-				<li><a class="align_image" href="/modules/profil/demandesAmis.jsp"><img src="images/menu/amis.png" alt="logo_mur" /> <span>Mes amis</span></a></li>
-				<li><a class="align_image" href="/AccesCercle"><img src="images/menu/cercle.png" alt="logo_mur" /> <span>Gestion cercles</span></a></li>
-			</ul>
-			
-			<hr />
-		
-			<div class="chat">
-				<div class="titre_chat" id="friends">
 
-				</div>
-				<div id="friends_list" class="contact_en_ligne">
-					
-					<!-- <div class="contact_chat">
-						<a class="align_photo_chat"
-							href="/explorateurMurAmis?idAmis=128"><img
-							src="/banque-images/mini/92.jpg"
-							alt="Anne-K Chaussette" /></a> <a class="align_photo_chat"
-							href="/explorateurMurAmis?idAmis=128">
-							Anne-K Chaussette
-						</a><br />
-					</div>-->
-				</div>
+	<div class="cadre_principal">
+
+
+
+<div class="cote_menu"></div>
+	<nav class="menu">
+		<div class="photo_profil" id="profile_photo"></div>
+		<ul class="choix_menu" id="liens_menu">
+			<li><a class="align_image" href="/MurProfil"><img src="images/menu/mur.png" alt="logo_mur" /> <span>Mon mur</span></a></li>
+			<li><a class="align_image" href="/modules/profil/renseignements.jsp"><img src="images/menu/infos2.png" alt="logo_mur" /> <span>Mes infos</span></a></li>
+			<li><a class="align_image" href="/modules/profil/demandesAmis.jsp"><img src="images/menu/amis.png" alt="logo_mur" /> <span>Mes amis</span></a></li>
+			<li><a class="align_image" href="/AccesCercle"><img src="images/menu/cercle.png" alt="logo_mur" /> <span>Gestion cercles</span></a></li>
+		</ul>
+		
+		<hr />
+	
+		<div class="chat">
+			<div class="titre_chat" id="friends">
 			</div>
-		</nav>
-		<section class="contenu">
-			<div class="header_actus">
-				<div class="big_mur_actu_recentes">
-					<div id="foaf_name"></div>
-					<img src="images/design/actualites.png" alt="logo" />
-					Actualités récentes
-				</div>
-				<hr />
-				<div class="bas_header_actus">
-					
-					<form action="" method="post">
-						<div class="barre_nouvelle_actu">
-							Publier :
-							<textarea id="new_actu" class="new_actu" name="new_actu" onkeypress="if (event.keyCode == 13) retourLigne();"></textarea>
-							<input type="hidden" name="type" value="1" />
-						</div>
-						<div class="bouton_envoi_actu">
-							<input class="publier_submit" type="submit" value="" />
-						</div>
-					</form>
-				</div>
+			<div id="friends_list" class="contact_en_ligne">
 			</div>
+		</div>
+	</nav>
+</div>
+
+	<div class="contenu">
+		<div class="cadre_principal_actus">
+			<div class="profil_nom_compte">
+				<h1 id="foaf_name"></h1>
 				
-			<!-- <article id="actualite_5667" class="actus">
+				<div class="profil_explication">
+					<img src="images/design/profile/book-open-bookmark.png" alt="etudes">  Etudiant à l'université Jean-Monnet Saint Etienne.<br>
+				</div>
+				
+				
+				<div class="profil_explication">
+					<img src="images/design/profile/globe.png" alt="langues"> Parle : Français, Anglais, C#, JAVA, PHP, XHTML <br>
+				</div>
+				
+				<div class="profil_explication">
+					<img src="images/design/profile/calendar-day.png" alt="ddn"> Né(e) le : 25 Septembre 1988. <br>
+				</div>
+				
+					
+				<div class="profil_explication">
+					<img src="images/design/profile/heart.png" alt="etudes">  En couple avec Béatrice Fournier 
+				</div>
+				
+				<div class="profil_explication">
+					<img src="images/design/profile/home-medium.png" alt="langues"> Habite à&nbsp; : Saint-Etienne <br>
+				</div>
+				
+			</div>
+			<div class="header_actus">
+				<hr>
+
+				<div class="bas_header_actus">
+						<h2 class="infos_cercle">Actualités de votre cercle : Public</h2>
+						<ul class="boutons_actu" id="actus_recent">
+							<li>Publier :&nbsp;</li>
+						</ul>
+						<form action="https://lifeshare2.dyndns.org/AjoutPublication" method="post">
+							<div class="barre_nouvelle_actu">
+								<textarea id="new_actu" class="new_actu" name="new_actu" onkeypress="if (event.keyCode == 13) retourLigne();"></textarea>
+								<input type="hidden" name="type" value="1">
+								<input type="hidden" name="cercle" value="3">
+							</div>
+							<div class="bouton_envoi_actu">
+								<input class="publier_submit" type="submit" value="">
+							</div>
+						</form>
+				</div>
+			</div>
+			<article id="actualite_5667" class="actus">
 				<div class="texte_actu">
 					<a class="actus_photos" href="/explorateurMurAmis?idAmis=21"><img src="/banque-images/mini/91.jpg" alt="profil" /></a>
 					<div class="contenu_actu">
-						<strong><a href="/explorateurMurAmis?idAmis=21">Béatrice Fournier</a></strong>
-						: en a marre d'avoir la poisse, si la roue pouvait tourner, ça m'arrangerait ^^
+						<strong><a href="/explorateurMurAmis?idAmis=21">Romain Blin</a></strong>
+						: I'm alone
 						<div class="date_creation_actu">
 							1 Juillet 2012, 12:32
 						</div>
@@ -189,8 +206,8 @@
 					</div>
 					<div class="commentaires_amis" id="com_5680">
 						<img class="commentaires_photos" src="/banque-images/mini/89.jpg" alt="profil" />
-						<strong><a href="/explorateurMurAmis?idAmis=13">Marie Louison</a></strong>
-						Qu'est ce qui se passe Bibou? J'espère que ce n'est rien de trop grave.
+						<strong><a href="/explorateurMurAmis?idAmis=13">Henry Story</a></strong>
+						No I'm here.
 						<p class="date_creation_actu">
 							1 Juillet 2012, 22:20
 							<a onclick="requeteAimeCommentaire(1, 5680, 5667);" style="cursor: pointer;">J'aime</a> 
@@ -202,9 +219,19 @@
 						</p>
 					</form>
 				</div>
-			</article>-->
-		</section>
-
+			</article>
+		</div>
+		<div class="gestion_cercles">
+			<!--
+			<div class="acces_cercle">
+				<a href="wall-circles.html?id=Public">Public</a>
+			</div>
+		
+			<div class="acces_cercle">
+				<a href="wall-circles.html?id=Bons_potes">Good Friends</a>
+			</div>
+		-->
+		</div>
 	</div>
 </body>
 </html>
